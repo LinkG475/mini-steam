@@ -1,5 +1,3 @@
-
-
 Lista_Juegos = []
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
