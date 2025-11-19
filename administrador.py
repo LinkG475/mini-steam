@@ -5,12 +5,12 @@ categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 def menu_administrador():
     while True:
         print("\n--- MENÚ DE ADMINISTRADOR ---")
-        print("1. Agregar Juego")
-        print("2. Editar Juego")
-        print("3. Eliminar Juego")
-        #print("4. Buscar Juego")
-        #print("5. Filtrar Juegos")
-        #print("6. Catalogo Juegos")
+        print("1. Agregar juego")
+        print("2. Editar juego")
+        print("3. Eliminar juego")
+        print("4. Buscar juego")
+        print("5. Filtrar juegos")
+        print("6. Mostrar catalogo de juegos")
         print("7. Salir")
 
         opcion = input("Seleccione una opción: ")

@@ -1,19 +1,22 @@
 from ambos import catalogo_juegos, filtrar_juegos, buscar_juego
+Lista_Juegos = []
+categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
+
 def pedir_juego():
 
 
 def comprar_juego():
 
 
-def menu_usuario():
+def menu_usuario(lista_juegos):
     while True:
-        print("\n--- MENÚ DE USUARIO ---")
-        print("1. Pedir juego")
+        print("\n--- MENÚ DE ADMINISTRADOR ---")
+        print("1. Pedir un juego")
         print("2. Comprar juego")
         print("3. Calificar juego")
-        print("4. Mostrar libros")
-        print("5. Mostrar estudiantes")
-        print("6. Mostrar préstamos")
+        print("4. Buscar juego")
+        print("5. Filtrar juegos")
+        print("6. Mostrar catalogo de juegos")
         print("7. Salir")
 
         opcion = input("Seleccione una opción: ")
