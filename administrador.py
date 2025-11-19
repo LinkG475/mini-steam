@@ -7,9 +7,9 @@ def menu_administrador():
         print("1. Agregar Juego")
         print("2. Editar Juego")
         print("3. Eliminar Juego")
-        print("4. Buscar Juego")
-        print("5. Filtrar Juegos")
-        print("6. Catalogo Juegos")
+        #print("4. Buscar Juego")
+        #print("5. Filtrar Juegos")
+        #print("6. Catalogo Juegos")
         print("7. Salir")
 
         opcion = input("Seleccione una opción: ")
@@ -37,15 +37,15 @@ def agregar_juego(lista_juegos):
     codigo_juego = input("Ingrese el código del juego: ")
     nombre_juego = input("Ingrese el nombre del juego: ")
     categoria_juego = input("Ingrese el género del juego: ")
-    precio_juego = float(input("Ingrese la plataforma del juego: "))
+    plataforma = input("Ingrese la plataforma del juego: ")
+    precio_juego = float(input("Ingrese el precio del juego: "))
     #calificacion_juego = ("Ingrese la calificación del juego(1-10): ")
-    lista_juegos.append({
-        "codigo": codigo_juego,
-        "nombre": nombre_juego,
+    lista_juegos.append({codigo_juego:
+        {"nombre": nombre_juego,
         "categoria": categoria_juego,
-        "precio": precio_juego,
-#       "calificacion": calificacion_juego
-    })
+        "plataforma" : plataforma,
+        "precio": precio_juego,}})
+#       "calificacion": calificacion_juego}    })
 
     print("Juego agregado exitosamente.")
 
