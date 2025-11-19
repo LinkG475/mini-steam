@@ -1,6 +1,6 @@
 # Main
-#from administrador import 
-from usuarios import pedir_juego, comprar_juego, menu_usuario
+from administrador import menu_administrador
+from usuarios import menu_usuario, pedir_juego, comprar_juego
 from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
 
 catalogo_juegos = []
