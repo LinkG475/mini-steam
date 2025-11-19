@@ -1,6 +1,8 @@
 # Main
 #from administrador import 
-#from usuarios import 
+from usuarios import pedir_juego, comprar_juego, menu_usuario
+from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
+
 catalogo_juegos = []
 
 
@@ -15,9 +17,9 @@ def ejecucion():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            menu_usuario(lista_juegos)
+            menu_usuario(catalogo_juegos)
         elif opcion == "2":
-            menu_administrador(lista_juegos)
+            menu_administrador(catalogo_juegos)
         elif opcion == "3":
             print("Saliendo del programa...")
             break
