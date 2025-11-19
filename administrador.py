@@ -1,28 +1,30 @@
+Lista_Juegos = []
+
 def menu_administrador():
     while True:
         print("\n--- MENÚ DE ADMINISTRADOR ---")
-        print("1. Registrar libro")
-        print("2. Registrar estudiante")
-        print("3. Registrar préstamo")
-        print("4. Mostrar libros")
-        print("5. Mostrar estudiantes")
-        print("6. Mostrar préstamos")
+        print("1. Agregar Juego")
+        print("2. Editar Juego")
+        print("3. Eliminar Juego")
+        print("4. Buscar Juego")
+        print("5. Filtrar Juegos")
+        print("6. Catalogo Juegos")
         print("7. Salir")
 
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            registrar_libro(lista_libros)
+            agregar_juego(Lista_Juegos)
         elif opcion == "2":
-            registrar_estudiante(lista_estudiantes)
+            editar_juego(Lista_Juegos)
         elif opcion == "3":
-            registrar_prestamo(lista_libros, lista_estudiantes, lista_prestamos)
+            eliminar_juego(Lista_Juegos)
         elif opcion == "4":
-            mostrar_libros(lista_libros)
+            buscar_juego(Lista_Juegos)
         elif opcion == "5":
-            mostrar_estudiantes(lista_estudiantes)
+            filtrar_juegos(Lista_Juegos)
         elif opcion == "6":
-            mostrar_prestamos(lista_prestamos)
+            Catalogo_Juegos(Lista_Juegos)
         elif opcion == "7":
             print("Saliendo del programa...")
             break
