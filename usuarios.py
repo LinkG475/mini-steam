@@ -1,3 +1,4 @@
+from ambos import catalogo_juegos, filtrar_juegos, buscar_juego
 def pedir_juego():
 
 
