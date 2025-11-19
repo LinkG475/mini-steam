@@ -1,3 +1,9 @@
+def pedir_juego():
+
+
+def comprar_juego():
+
+
 def menu_usuario():
     while True:
         print("\n--- MENÚ DE USUARIO ---")
@@ -12,18 +18,10 @@ def menu_usuario():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            registrar_libro(lista_libros)
+            pedir_juego(lista_juegos)
         elif opcion == "2":
-            registrar_estudiante(lista_estudiantes)
+            comprar_juego(lista_juegos)
         elif opcion == "3":
-            registrar_prestamo(lista_libros, lista_estudiantes, lista_prestamos)
-        elif opcion == "4":
-            mostrar_libros(lista_libros)
-        elif opcion == "5":
-            mostrar_estudiantes(lista_estudiantes)
-        elif opcion == "6":
-            mostrar_prestamos(lista_prestamos)
-        elif opcion == "7":
             print("Saliendo del programa...")
             break
         else:
