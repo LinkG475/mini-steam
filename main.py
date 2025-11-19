@@ -29,4 +29,4 @@ def ejecucion():
         else:
             print("Opción no valida.")
 
-ejercuion()
+ejecucion()
