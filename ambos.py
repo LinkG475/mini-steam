@@ -1,8 +1,8 @@
 # Ambos
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
-def buscar_juego(lista_juegos):
+def buscar_juego(Catalogo_Juegos):
     codigo_juego = input("Ingrese el código del juego a buscar: ")
-    for juego in lista_juegos:
+    for juego in Catalogo_Juegos:
         if juego["codigo"] == codigo_juego:
             print(f"Juego encontrado: {juego}")
             return
@@ -21,10 +21,10 @@ def filtrar_juegos(lista_juegos):
     else:
         print("No se encontraron juegos en esa categoría.")
 
-def catalogo_juegos(lista_juegos):
-    if not lista_juegos:
+def mostrar_catalogo(Catalogo_Juegos):
+    if len(Catalogo_Juegos) == 0:
         print("No hay juegos disponibles.")
     else:
         print("Catálogo de Juegos:")
-        for juego in lista_juegos:
+        for juego in Catalogo_Juegos:
             print(juego)

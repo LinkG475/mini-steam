@@ -1,5 +1,5 @@
 # Administrador
-from ambos import catalogo_juegos, filtrar_juegos, buscar_juego
+from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
 Catalogo_Juegos = {}
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
@@ -27,7 +27,7 @@ def menu_administrador():
         elif opcion == "5":
             filtrar_juegos(Catalogo_Juegos)
         elif opcion == "6":
-            catalogo_juegos(Catalogo_Juegos)
+            mostrar_catalogo(Catalogo_Juegos)
         elif opcion == "7":
             print("Saliendo del programa...")
             break
@@ -67,8 +67,9 @@ def agregar_juego(Catalogo_Juegos):
         "plataforma" : plataforma,
         "precio": precio_juego}}
 #       "calificacion": calificacion_juego}    })
-    Lista_Juegos = {juego}
+    Catalogo_Juegos.update(juego)
     print("Juego agregado exitosamente.")
+    #print(Catalogo_Juegos)
 
 def editar_juego(Catalogo_Juegos):
     codigo_juego = input("Ingrese el código del juego a editar: ")
