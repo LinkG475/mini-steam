@@ -43,16 +43,6 @@ def generador_id(Catalogo_Juegos):
         numero = int(ultimo[1:]) + 1
         codigo = f"J{numero:03d}"
         return(codigo)
-    #Opcion 2
-"""if len(Lista_Juegos) == 0:
-        codigo = "J001"
-    else:
-        if len(Lista_Juegos) < 9:
-            codigo = f"J00{len(Lista_Juegos)+1}"
-        elif len(lista_libros) < 99:
-            codigo = f"J0{len(Lista_Juegos)+1}"
-        elif len(Lista_Juegos) < 999:
-            codigo = f"J{len(Lista_Juegos)+1}"""
 
 def agregar_juego(Catalogo_Juegos):
     codigo_juego = generador_id(Catalogo_Juegos)
@@ -87,19 +77,19 @@ def editar_juego(Catalogo_Juegos):
                     juego["plataforma"] = input("Ingrese la nueva plataforma del juego: ")
                     juego["precio"] = float(input("Ingrese el nuevo precio del juego: "))         
                     print("Juego editado exitosamente.")
-                    print(Catalogo_Juegos)
         if verificacion == 0:
             print("Juego no encontrado.")
 #juego["calificacion"] = input("Ingrese la nueva calificación del juego(1-10): ")
 
 def eliminar_juego(Catalogo_Juegos):
     codigo_juego = input("Ingrese el codigo del juego a eliminar: ")
-    for juego in Catalogo_Juegos:
-        if juego["codigo"] == codigo_juego:
-            Catalogo_Juegos.remove(juego)
+    for codigo in Catalogo_Juegos.keys():
+        if codigo == codigo_juego.capitalize():
+            Catalogo_Juegos.pop(codigo)
             print("Juego eliminado exitosamente.")
             return
     print("Juego no encontrado.")
 
 
 menu_administrador()
+#print(Catalogo_Juegos)
