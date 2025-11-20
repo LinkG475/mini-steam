@@ -1,13 +1,33 @@
 # Usuarios
-from ambos import catalogo_juegos, filtrar_juegos, buscar_juego
+from ambos import Catalogo_Juegos, filtrar_juegos, buscar_juego
 Lista_Juegos = {}
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
-def pedir_juego():
-    print()
+def pedir_juego(lista_juegos):
+    nombre_juego = input("Ingrese el nombre del juego que desea: ")
+    categoria_juego = input("Ingrese la categoría del juego: ")
+    if categoria_juego not in categorias:
+        print("Categoría no válida. Juego no registrado.")
+        return
+    if nombre_juego not in lista_juegos:
+        print("El juego no está disponible en el catálogo.")
+        return
+    juego = {"nombre": nombre_juego, "categoria": categoria_juego}
+    lista_juegos.append(juego)
+    print("Su juego solicitado ha sido registrado.")
 
-def comprar_juego():
-    print()
+def comprar_juego(lista_juegos):
+    nombre_juego_por_comprar = input("Ingrese el nombre del juego que desea comprar: ")
+    for juego in lista_juegos:
+        if juego["nombre"] == nombre_juego_por_comprar.lower():
+            print(f"Juego encontrado: {juego}")
+        confirmación = input("¿Desea confirmar la compra? (si/no): ")
+        if confirmación.lower()== "si":
+            print(f"Usted ha comprado el juego: {juego['nombre']}")
+        else:
+            print("Compra cancelada.")
+            return
+print("Su juego no ha sido encontrado en el catálogo.")
 
 def calificar_juego():
     print()
