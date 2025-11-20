@@ -1,3 +1,4 @@
+# Administrador
 from ambos import catalogo_juegos, filtrar_juegos, buscar_juego
 Lista_Juegos = []
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]

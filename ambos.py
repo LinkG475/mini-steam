@@ -1,3 +1,5 @@
+# Ambos
+categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 def buscar_juego(lista_juegos):
     codigo_juego = input("Ingrese el código del juego a buscar: ")
     for juego in lista_juegos:

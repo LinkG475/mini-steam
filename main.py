@@ -1,10 +1,11 @@
 # Main
-from administrador import menu_administrador
-from usuarios import menu_usuario, pedir_juego, comprar_juego
-from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
+from administrador import menu_administrador, agregar_juego, editar_juego, eliminar_juego
+from usuarios import menu_usuario, pedir_juego, comprar_juego, calificar_juego
+from ambos import buscar_juego, filtrar_juegos, catalogo_juegos
 
 Catalogo_Juegos = []
 contrasenia = "admin123"
+categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
 def ejecucion():
     while True:
