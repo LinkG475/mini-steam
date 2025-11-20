@@ -6,16 +6,14 @@ categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
 def pedir_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego que desea: ")
-    categoria_juego = input("Ingrese la categoría del juego: ")
-    if categoria_juego not in categorias:
-        print("Categoría no válida. Juego no registrado.")
-        return
-    if nombre_juego not in Catalogo_Juegos:
-        print("El juego no está disponible en el catálogo.")
-        return
-    juego = {"nombre": nombre_juego, "categoria": categoria_juego}
-    Catalogo_Juegos.append(juego)
-    print("Su juego solicitado ha sido registrado.")
+    for v in Catalogo_Juegos.values():
+        if nombre_juego  == v["nombre"]: 
+            precio = v.get("precio")
+            juego = {"juego": nombre_juego, "precio": f"${precio:.2f}"}
+            Wishlist.append(juego)
+            print("El juego solicitado ha sido guardado en la Wishlist.")
+            return
+    print("El juego no está disponible en el catálogo.")
 
 def comprar_juego(lista_juegos):
     nombre_juego_por_comprar = input("Ingrese el nombre del juego que desea comprar: ")
