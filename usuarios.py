@@ -1,16 +1,16 @@
 # Usuarios
 from ambos import catalogo_juegos, filtrar_juegos, buscar_juego
-Lista_Juegos = []
+Lista_Juegos = {}
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
 def pedir_juego():
-
+    print()
 
 def comprar_juego():
-
+    print()
 
 def calificar_juego():
-    
+    print()
 
 def menu_usuario(lista_juegos):
     while True:
