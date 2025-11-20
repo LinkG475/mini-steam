@@ -1,19 +1,20 @@
 # Usuarios
-from ambos import Catalogo_Juegos, filtrar_juegos, buscar_juego
-Lista_Juegos = {}
+from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
+Catalogo_Juegos = {}
+Wishlist = []
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
-def pedir_juego(lista_juegos):
+def pedir_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego que desea: ")
     categoria_juego = input("Ingrese la categoría del juego: ")
     if categoria_juego not in categorias:
         print("Categoría no válida. Juego no registrado.")
         return
-    if nombre_juego not in lista_juegos:
+    if nombre_juego not in Catalogo_Juegos:
         print("El juego no está disponible en el catálogo.")
         return
     juego = {"nombre": nombre_juego, "categoria": categoria_juego}
-    lista_juegos.append(juego)
+    Catalogo_Juegos.append(juego)
     print("Su juego solicitado ha sido registrado.")
 
 def comprar_juego(lista_juegos):
@@ -32,7 +33,7 @@ print("Su juego no ha sido encontrado en el catálogo.")
 def calificar_juego():
     print()
 
-def menu_usuario(lista_juegos):
+def menu_usuario(Catalogo_Juegos):
     while True:
         print("\n--- MENÚ DE ADMINISTRADOR ---")
         print("1. Pedir un juego")
@@ -46,9 +47,9 @@ def menu_usuario(lista_juegos):
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            pedir_juego(lista_juegos)
+            pedir_juego(Catalogo_Juegos)
         elif opcion == "2":
-            comprar_juego(lista_juegos)
+            comprar_juego(Catalogo_Juegos)
         elif opcion == "3":
             print("Saliendo del programa...")
             break

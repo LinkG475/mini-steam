@@ -72,17 +72,25 @@ def agregar_juego(Catalogo_Juegos):
     #print(Catalogo_Juegos)
 
 def editar_juego(Catalogo_Juegos):
-    codigo_juego = input("Ingrese el código del juego a editar: ")
-    for juego in Catalogo_Juegos:
-        if juego["codigo"] == codigo_juego:
-            print("Juego encontrado. Ingrese los nuevos datos.")
-            juego["nombre"] = input("Ingrese el nuevo nombre del juego: ")
-            juego["categoria"] = input("Ingrese el nuevo género del juego: ")
-            juego["precio"] = input("Ingrese la nueva plataforma del juego: ")
-            #juego["calificacion"] = input("Ingrese la nueva calificación del juego(1-10): ")
-            print("Juego editado exitosamente.")
-            return
-    print("Juego no encontrado.")
+    verificacion = 0
+    if len(Catalogo_Juegos) == 0:
+        print("No hay juegos disponibles.")
+    else:
+        codigo_juego = input("Ingrese el código del juego a editar: ")
+        for codigo, juego in Catalogo_Juegos.items():
+            if codigo == codigo_juego.capitalize():
+                verificacion = 1
+                if verificacion == 1:    
+                    print("Juego encontrado. Ingrese los nuevos datos.")
+                    juego["nombre"] = input("Ingrese el nuevo nombre del juego: ")
+                    juego["categoria"] = input("Ingrese el nuevo género del juego: ")
+                    juego["plataforma"] = input("Ingrese la nueva plataforma del juego: ")
+                    juego["precio"] = float(input("Ingrese el nuevo precio del juego: "))         
+                    print("Juego editado exitosamente.")
+                    print(Catalogo_Juegos)
+        if verificacion == 0:
+            print("Juego no encontrado.")
+#juego["calificacion"] = input("Ingrese la nueva calificación del juego(1-10): ")
 
 def eliminar_juego(Catalogo_Juegos):
     codigo_juego = input("Ingrese el codigo del juego a eliminar: ")
