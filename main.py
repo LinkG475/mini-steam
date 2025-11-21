@@ -4,12 +4,14 @@ from usuarios import menu_usuario, pedir_juego, comprar_juego
 from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
 
 Catalogo_Juegos = {}
-# Datos en caso usuario administrador
+# Datos de administrador
 contrasenia = "admin123"
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
+# Datos de usuario
 Wishlist = []
+Compras = []
 # Menú de ejecución principal
-def ejecucion():
+def ejecucion(Catalogo_Juegos):
     while True:
         print("\n--- MENÚ INICIAL ---")
         print("1. Entrar como usuario")
@@ -21,7 +23,6 @@ def ejecucion():
         if opcion == "1":
             menu_usuario(Catalogo_Juegos)
             print("Entraste como usuario")
-            menu_usuario(Catalogo_Juegos)
         elif opcion == "2":
             contra = input("Ingrese la contraseña de administrador: ")
             if contra == contrasenia:
@@ -35,4 +36,4 @@ def ejecucion():
         else:
             print("Opción no valida.")
 
-ejecucion()
+ejecucion(Catalogo_Juegos)

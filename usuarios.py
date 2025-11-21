@@ -5,6 +5,40 @@ Wishlist = []
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 Compras = []
 
+def menu_usuario(Catalogo_Juegos):
+    while True:
+        print("\n--- MENÚ DE USUARIO ---")
+        print("1. Pedir un juego")
+        print("2. Comprar juego")
+        print("3. Mostrar Wishlist")
+        print("4. Revisar juegos comprados")
+        print("5. Buscar juego")
+        print("6. Filtrar juegos")
+        print("7. Mostrar catalogo de juegos")
+        print("8. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            pedir_juego(Catalogo_Juegos)
+        elif opcion == "2":
+            comprar_juego(Catalogo_Juegos)
+        elif opcion == "3":
+            mostrar_wishlist(Wishlist)
+        elif opcion == "4":
+            mostrar_compras(Compras)
+        elif opcion == "5":
+            buscar_juego(Catalogo_Juegos)
+        elif opcion == "6":
+            filtrar_juegos(Catalogo_Juegos)
+        elif opcion == "7":
+            mostrar_catalogo(Catalogo_Juegos)
+        elif opcion == "8":
+            print("Regresando a menu inicial...")
+            return
+        else:
+            print("Opción inválida.")
+
 def pedir_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego que desea: ")
     for v in Catalogo_Juegos.values():
@@ -62,36 +96,3 @@ def mostrar_compras(Compras):
         for juego in Compras:
             print(f"- {juego}")
 
-def menu_usuario(Catalogo_Juegos):
-    while True:
-        print("\n--- MENÚ DE USUARIO ---")
-        print("1. Pedir un juego")
-        print("2. Comprar juego")
-        print("3. Mostrar Wishlist")
-        print("4. Revisar juegos comprados")
-        print("5. Buscar juego")
-        print("6. Filtrar juegos")
-        print("7. Mostrar catalogo de juegos")
-        print("8. Salir")
-
-        opcion = input("Seleccione una opción: ")
-
-        if opcion == "1":
-            pedir_juego(Catalogo_Juegos)
-        elif opcion == "2":
-            comprar_juego(Catalogo_Juegos)
-        elif opcion == "3":
-            mostrar_wishlist(Wishlist)
-        elif opcion == "4":
-            mostrar_compras(Compras)
-        elif opcion == "5":
-            buscar_juego(Catalogo_Juegos)
-        elif opcion == "6":
-            filtrar_juegos(Catalogo_Juegos)
-        elif opcion == "7":
-            mostrar_catalogo(Catalogo_Juegos)
-        elif opcion == "8":
-            print("Saliendo del programa...")
-            break
-        else:
-            print("Opción inválida.")

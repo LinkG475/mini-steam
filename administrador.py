@@ -4,7 +4,7 @@ from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
 Catalogo_Juegos = {}
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 
-def menu_administrador():
+def menu_administrador(Catalogo_Juegos):
     while True:
         print("\n--- MENÚ DE ADMINISTRADOR ---")
         print("1. Agregar juego")
@@ -30,8 +30,8 @@ def menu_administrador():
         elif opcion == "6":
             mostrar_catalogo(Catalogo_Juegos)
         elif opcion == "7":
-            print("Saliendo del programa...")
-            break
+            print("Regresando a menu inicial...")
+            return
         else:
             print("Opción inválida.")
 
@@ -91,5 +91,3 @@ def eliminar_juego(Catalogo_Juegos):
             return
 
     print("Juego no encontrado.")
-
-menu_administrador()

@@ -1,9 +1,10 @@
 # Ambos
+Catalogo_Juegos = {}
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 def buscar_juego(Catalogo_Juegos):
     codigo_juego = input("Ingrese el código del juego a buscar: ")
     for juego in Catalogo_Juegos:
-        if juego["codigo"] == codigo_juego:
+        if juego["codigo"] == codigo_juego.capitalize():
             print(f"Juego encontrado: {juego}")
             return
     print("Juego no encontrado.")
