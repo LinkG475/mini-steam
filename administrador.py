@@ -11,7 +11,8 @@ def menu_administrador(Catalogo_Juegos):
         print("3. Eliminar juego")
         print("4. Buscar juego")
         print("5. Mostrar catalogo de juegos")
-        print("6. Salir")
+        print("6. Mostrar codigos de juegos")
+        print("7. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -26,6 +27,8 @@ def menu_administrador(Catalogo_Juegos):
         elif opcion == "5":
             mostrar_catalogo(Catalogo_Juegos)
         elif opcion == "6":
+            codigos_juegos(Catalogo_Juegos)
+        elif opcion == "7":
             print("Regresando a menu inicial...")
             return
         else:
@@ -42,17 +45,18 @@ def generador_id(Catalogo_Juegos):
         return codigo
 # 
 def seleccionar_categoria(categorias):
-    categoria = input("Seleccione una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
+    categoria = input("(Accion, Aventura, Deportes, Estrategia o Simulacion): ")
     while True:
         if categoria.capitalize() in categorias:
             return categoria.capitalize()
         else:
             print("No existe esa categoria.")
-            categoria = input("Ingrese una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
+            categoria = input("(Seleccione una categoria Accion, Aventura, Deportes, Estrategia o Simulacion): ")
 # Codigo de funcion para agregar un juego
 def agregar_juego(Catalogo_Juegos):
     codigo_juego = generador_id(Catalogo_Juegos)
     nombre_juego = input("Ingrese el nombre del juego: ")
+    print("Seleccione la categoria")
     categoria_juego = seleccionar_categoria(categorias)
     while True:
         try:
@@ -83,7 +87,8 @@ def editar_juego(Catalogo_Juegos):
                 verificacion = 1
                 print("Juego encontrado. Ingrese los nuevos datos.")
                 juego["nombre"] = input("Ingrese el nuevo nombre del juego: ")
-                juego["categoria"] = input("Ingrese el nuevo género del juego: ")
+                print("Seleccione la nueva categoria")
+                juego["categoria"] = seleccionar_categoria(categorias)
                 while True:
                     try:
                         juego["precio"] = float(input("Ingrese el precio del juego: "))
@@ -106,3 +111,11 @@ def eliminar_juego(Catalogo_Juegos):
             return
 
     print("Juego no encontrado.")
+
+def codigos_juegos(Catalogo_Juegos):
+    if len(Catalogo_Juegos) == 0:
+        print("No hay juegos disponibles.")
+    else:
+        print("Catálogo de Juegos:")
+        for codigo, juego in Catalogo_Juegos.items():
+            print(f"-{codigo}:{juego["nombre"]}")
