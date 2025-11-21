@@ -1,7 +1,7 @@
 # Funciones del Usuario
 from ambos import mostrar_catalogo, buscar_juego
 Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
-Wishlist = [] # Lista de juegos deseados por el usuario
+Wishlist = [] # Lista de juegos deseados por el usuario (Carrito)
 categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"] 
 Compras = [] # Lista de juegos comprados por el usuario
 # Codigo de funcion que despliega el menu del usuario

@@ -43,7 +43,7 @@ def generador_id(Catalogo_Juegos):
         numero = int(ultimo[1:]) + 1
         codigo = f"J{numero:03d}"
         return codigo
-# 
+# Codigo de funcion para seleccionar la categoria de los juegos dentro del catalogo
 def seleccionar_categoria(categorias):
     categoria = input("(Accion, Aventura, Deportes, Estrategia o Simulacion): ")
     while True:
@@ -51,12 +51,12 @@ def seleccionar_categoria(categorias):
             return categoria.capitalize()
         else:
             print("No existe esa categoria.")
-            categoria = input("(Seleccione una categoria Accion, Aventura, Deportes, Estrategia o Simulacion): ")
+            categoria = input("Seleccione una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
 # Codigo de funcion para agregar un juego
 def agregar_juego(Catalogo_Juegos):
     codigo_juego = generador_id(Catalogo_Juegos)
     nombre_juego = input("Ingrese el nombre del juego: ")
-    print("Seleccione la categoria")
+    print("Seleccione la categoria", end=" ")
     categoria_juego = seleccionar_categoria(categorias)
     while True:
         try:
@@ -87,7 +87,7 @@ def editar_juego(Catalogo_Juegos):
                 verificacion = 1
                 print("Juego encontrado. Ingrese los nuevos datos.")
                 juego["nombre"] = input("Ingrese el nuevo nombre del juego: ")
-                print("Seleccione la nueva categoria")
+                print("Seleccione la nueva categoria", end=" ")
                 juego["categoria"] = seleccionar_categoria(categorias)
                 while True:
                     try:
@@ -111,11 +111,11 @@ def eliminar_juego(Catalogo_Juegos):
             return
 
     print("Juego no encontrado.")
-
+# Codigo de funcion para ver el codigo de los juegos
 def codigos_juegos(Catalogo_Juegos):
     if len(Catalogo_Juegos) == 0:
         print("No hay juegos disponibles.")
     else:
         print("Catálogo de Juegos:")
         for codigo, juego in Catalogo_Juegos.items():
-            print(f"-{codigo}:{juego["nombre"]}")
+            print(f"-{codigo} : {juego["nombre"]}")
