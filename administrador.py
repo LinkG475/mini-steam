@@ -38,31 +38,24 @@ def menu_administrador():
 def agregar_juego(lista_juegos):
     codigo_juego = input("Ingrese el código del juego: ")
     nombre_juego = input("Ingrese el nombre del juego: ")
-<<<<<<< Updated upstream
     categoria_juego = input("Ingrese la categoria del juego: ")
     precio_juego = float(input("Ingrese el precio del juego: "))
-=======
     categoria_juego = input("Ingrese el género del juego: ")
     precio_juego = float(input("Ingrese la plataforma del juego: "))
->>>>>>> Stashed changes
     #calificacion_juego = ("Ingrese la calificación del juego(1-10): ")
     lista_juegos.append({
         "codigo": codigo_juego,
         "nombre": nombre_juego,
         "categoria": categoria_juego,
-<<<<<<< Updated upstream
-        "precio": precio_juego}}
+        "precio": precio_juego})
 #       "calificacion": calificacion_juego}    })
     Catalogo_Juegos.update(juego)
-=======
         "precio": precio_juego,
 #       "calificacion": calificacion_juego
-    })
+#    })
 
->>>>>>> Stashed changes
     print("Juego agregado exitosamente.")
-
-<<<<<<< Updated upstream
+#codigo de funcion de editar juego
 def editar_juego(Catalogo_Juegos):
     verificacion = 0
     if len(Catalogo_Juegos) == 0:
@@ -81,7 +74,6 @@ def editar_juego(Catalogo_Juegos):
         if verificacion == 0:
             print("Juego no encontrado.")
 #juego["calificacion"] = input("Ingrese la nueva calificación del juego(1-10): ")
-=======
 #codigo de funcion de editar juego
 def editar_juego(lista_juegos):
     codigo_juego = input("Ingrese el código del juego a editar: ")
@@ -95,7 +87,6 @@ def editar_juego(lista_juegos):
             print("Juego editado exitosamente.")
             return
     print("Juego no encontrado.")
->>>>>>> Stashed changes
 
 #codigo de funcion de eliminar juego
 def eliminar_juego(lista_juegos):
@@ -108,9 +99,7 @@ def eliminar_juego(lista_juegos):
     print("Juego no encontrado.")
 
 
-<<<<<<< Updated upstream
 menu_administrador()
-=======
 #codigo de funcion de buscar juego
 def buscar_juego(lista_juegos):
     codigo_juego = input("Ingrese el código del juego a buscar: ")
@@ -143,4 +132,3 @@ def Catalogo_Juegos(lista_juegos):
             print(juego)
 
 menu_administrador()
->>>>>>> Stashed changes

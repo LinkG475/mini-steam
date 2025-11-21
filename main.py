@@ -4,10 +4,11 @@ from usuarios import menu_usuario, pedir_juego, comprar_juego, calificar_juego
 from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
 
 Catalogo_Juegos = {}
+# Datos en caso usuario administrador
 contrasenia = "admin123"
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 Wishlist = []
-
+# Menú de ejecución principal
 def ejecucion():
     while True:
         print("\n--- MENÚ INICIAL ---")
@@ -16,7 +17,7 @@ def ejecucion():
         print("3. Finalizar ejecucion")
 
         opcion = input("Seleccione una opción: ")
-
+#Opciones de menu inicial
         if opcion == "1":
             menu_usuario(Catalogo_Juegos)
             print("Entraste como usuario")
