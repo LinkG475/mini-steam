@@ -1,5 +1,5 @@
 # Funciones del Usuario
-from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
+from ambos import mostrar_catalogo, buscar_juego
 Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
 Wishlist = [] # Lista de juegos deseados por el usuario
 categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"] 
@@ -13,9 +13,8 @@ def menu_usuario(Catalogo_Juegos):
         print("3. Mostrar Wishlist")
         print("4. Revisar juegos comprados")
         print("5. Buscar juego")
-        print("6. Filtrar juegos")
-        print("7. Mostrar catalogo de juegos")
-        print("8. Salir")
+        print("6. Mostrar catalogo de juegos")
+        print("7. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -30,12 +29,10 @@ def menu_usuario(Catalogo_Juegos):
         elif opcion == "5":
             buscar_juego(Catalogo_Juegos)
         elif opcion == "6":
-            filtrar_juegos(Catalogo_Juegos)
-        elif opcion == "7":
             mostrar_catalogo(Catalogo_Juegos)
-        elif opcion == "8":
+        elif opcion == "7":
             print("Regresando a menu inicial...")
-            return
+            return    
         else:
             print("Opción inválida.")
 # Codigo de funcion para pedir un juego

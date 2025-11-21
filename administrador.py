@@ -1,5 +1,5 @@
 # Funciones del Administrador
-from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
+from ambos import mostrar_catalogo, buscar_juego
 Catalogo_Juegos = {}  # Diccionario de almacenaje de datos de los juegos
 categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"]  
 # Codigo de funcion que despliega el menu del administrador después de ingresar la contraseña correcta
@@ -10,8 +10,8 @@ def menu_administrador(Catalogo_Juegos):
         print("2. Editar juego")
         print("3. Eliminar juego")
         print("4. Buscar juego")
-        print("5. Filtrar juegos")
-        print("6. Mostrar catalogo de juegos")
+        print("5. Mostrar catalogo de juegos")
+        print("6. ")
         print("7. Salir")
 
         opcion = input("Seleccione una opción: ")
@@ -25,9 +25,9 @@ def menu_administrador(Catalogo_Juegos):
         elif opcion == "4":
             buscar_juego(Catalogo_Juegos)
         elif opcion == "5":
-            filtrar_juegos(Catalogo_Juegos)
-        elif opcion == "6":
             mostrar_catalogo(Catalogo_Juegos)
+        #elif opcion == "6":
+            
         elif opcion == "7":
             print("Regresando a menu inicial...")
             return
@@ -51,13 +51,20 @@ def seleccionar_categoria(categorias):
             return categoria.capitalize()
         else:
             print("No existe esa categoria.")
-            categoria = input("Seleccione una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
+            categoria = input("Ingrese una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
 # Codigo de funcion para agregar un juego
 def agregar_juego(Catalogo_Juegos):
     codigo_juego = generador_id(Catalogo_Juegos)
     nombre_juego = input("Ingrese el nombre del juego: ")
     categoria_juego = seleccionar_categoria(categorias)
-    precio_juego = float(input("Ingrese el precio del juego: "))
+    while True:
+        try:
+            precio_juego = float(input("Ingrese el precio del juego: "))
+        except ValueError:
+            print("El valor no puede ser procesado. Ingrese unicamente numeros.")
+        else:
+            break
+                
 
     juego = {
         codigo_juego: {
@@ -82,7 +89,13 @@ def editar_juego(Catalogo_Juegos):
                 print("Juego encontrado. Ingrese los nuevos datos.")
                 juego["nombre"] = input("Ingrese el nuevo nombre del juego: ")
                 juego["categoria"] = input("Ingrese el nuevo género del juego: ")
-                juego["precio"] = float(input("Ingrese el nuevo precio del juego: "))
+                while True:
+                    try:
+                        juego["precio"] = float(input("Ingrese el precio del juego: "))
+                    except ValueError:
+                        print("El valor no puede ser procesado. Ingrese números.")
+                    else:
+                        break
                 print("Juego editado exitosamente.")
                 break
 

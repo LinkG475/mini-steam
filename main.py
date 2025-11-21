@@ -1,7 +1,7 @@
 # Main
 from administrador import menu_administrador, agregar_juego, editar_juego, eliminar_juego, generador_id
 from usuario import menu_usuario, pedir_juego, comprar_juego
-from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
+from ambos import buscar_juego, mostrar_catalogo
 # Diccionario de almacenaje de datos de los juegos
 Catalogo_Juegos = {} 
 # Datos de administrador
