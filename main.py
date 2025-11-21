@@ -6,7 +6,7 @@ from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
 Catalogo_Juegos = {} 
 # Datos de administrador
 contrasenia = "admin123"
-categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
+categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"]
 # Datos de usuario
 Wishlist = []
 Compras = []

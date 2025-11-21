@@ -2,7 +2,7 @@
 from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
 Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
 Wishlist = [] # Lista de juegos deseados por el usuario
-categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"] 
+categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"] 
 Compras = [] # Lista de juegos comprados por el usuario
 # Codigo de funcion que despliega el menu del usuario
 def menu_usuario(Catalogo_Juegos):
@@ -52,7 +52,7 @@ def pedir_juego(Catalogo_Juegos):
                 return
             else:
                 for item in Wishlist:
-                    if nombre_juego not in item.values():
+                    if nombre_juego.upper() != item["juego"].upper():
                         precio = v.get("precio")
                         nombre = v.get("nombre")
                         juego = {"juego": nombre, "precio": f"${precio:.2f}"}

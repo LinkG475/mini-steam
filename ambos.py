@@ -1,6 +1,6 @@
 # Funciones compartidas
 Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
-categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
+categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"]
 # Codigo de funcion para buscar un juego
 def buscar_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego a buscar: ")

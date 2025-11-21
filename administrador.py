@@ -1,7 +1,7 @@
 # Funciones del Administrador
 from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
 Catalogo_Juegos = {}  # Diccionario de almacenaje de datos de los juegos
-categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]  
+categorias = ["Accion", "Aventura", "Deportes", "Estrategia", "Simulacion"]  
 # Codigo de funcion que despliega el menu del administrador después de ingresar la contraseña correcta
 def menu_administrador(Catalogo_Juegos):
     while True:
@@ -43,11 +43,20 @@ def generador_id(Catalogo_Juegos):
         numero = int(ultimo[1:]) + 1
         codigo = f"J{numero:03d}"
         return codigo
+# 
+def seleccionar_categoria(categorias):
+    categoria = input("Seleccione una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
+    while True:
+        if categoria.capitalize() in categorias:
+            return categoria.capitalize()
+        else:
+            print("No existe esa categoria.")
+            categoria = input("Seleccione una categoria (Accion, Aventura, Deportes, Estrategia o Simulacion): ")
 # Codigo de funcion para agregar un juego
 def agregar_juego(Catalogo_Juegos):
     codigo_juego = generador_id(Catalogo_Juegos)
     nombre_juego = input("Ingrese el nombre del juego: ")
-    categoria_juego = input("Ingrese la categoria del juego: ")
+    categoria_juego = seleccionar_categoria(categorias)
     precio_juego = float(input("Ingrese el precio del juego: "))
 
     juego = {
@@ -67,7 +76,6 @@ def editar_juego(Catalogo_Juegos):
         print("No hay juegos disponibles.")
     else:
         codigo_juego = input("Ingrese el código del juego a editar: ")
-
         for codigo, juego in Catalogo_Juegos.items():
             if codigo == codigo_juego.capitalize():
                 verificacion = 1
