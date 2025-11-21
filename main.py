@@ -1,6 +1,6 @@
 # Main
 from administrador import menu_administrador, agregar_juego, editar_juego, eliminar_juego
-from usuarios import menu_usuario, pedir_juego, comprar_juego, calificar_juego
+from usuarios import menu_usuario, pedir_juego, comprar_juego
 from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
 
 Catalogo_Juegos = {}

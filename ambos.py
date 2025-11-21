@@ -8,12 +8,12 @@ def buscar_juego(Catalogo_Juegos):
             return
     print("Juego no encontrado.")
 
-def filtrar_juegos(lista_juegos):
+def filtrar_juegos(Catalogo_Juegos):
     print("Categorias disponibles:")
     for categoria in categorias:
         print(f"- {categoria}")
     categoria_filtro = input("Ingrese la categoría por la que desea filtrar: ")
-    juegos_filtrados = [juego for juego in lista_juegos if juego["categoria"].lower() == categoria_filtro.lower()]
+    juegos_filtrados = [juego for juego in Catalogo_Juegos if juego["categoria"].lower() == categoria_filtro.lower()]
     if juegos_filtrados:
         print("Juegos filtrados:")
         for juego in juegos_filtrados:
