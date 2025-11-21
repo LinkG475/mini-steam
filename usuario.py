@@ -4,7 +4,7 @@ Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
 Wishlist = [] # Lista de juegos deseados por el usuario
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"] 
 Compras = [] # Lista de juegos comprados por el usuario
-
+# Codigo de funcion que despliega el menu del usuario
 def menu_usuario(Catalogo_Juegos):
     while True:
         print("\n--- MENÚ DE USUARIO ---")
@@ -38,14 +38,15 @@ def menu_usuario(Catalogo_Juegos):
             return
         else:
             print("Opción inválida.")
-
+# Codigo de funcion para pedir un juego
 def pedir_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego que desea: ")
     for v in Catalogo_Juegos.values():
-        if nombre_juego  == v["nombre"]: 
+        if nombre_juego.upper()  == v["nombre"].upper(): 
             if len(Wishlist) == 0:
                 precio = v.get("precio")
-                juego = {"juego": nombre_juego, "precio": f"${precio:.2f}"}
+                nombre = v.get("nombre")
+                juego = {"juego": nombre, "precio": f"${precio:.2f}"}
                 Wishlist.append(juego)
                 print("El juego solicitado ha sido guardado en la Wishlist.")
                 return
@@ -53,7 +54,8 @@ def pedir_juego(Catalogo_Juegos):
                 for item in Wishlist:
                     if nombre_juego not in item.values():
                         precio = v.get("precio")
-                        juego = {"juego": nombre_juego, "precio": f"${precio:.2f}"}
+                        nombre = v.get("nombre")
+                        juego = {"juego": nombre, "precio": f"${precio:.2f}"}
                         Wishlist.append(juego)
                         print("El juego solicitado ha sido guardado en la Wishlist.")
                         return
@@ -61,11 +63,11 @@ def pedir_juego(Catalogo_Juegos):
                         print("El juego ya estaba guardado en su Wishlist")
                         return
     print("El juego no está disponible en el catálogo.")
-
+# Codigo de funcion para comprar un juego
 def comprar_juego(Wishlist):
     nombre_juego_por_comprar = input("Ingrese el nombre del juego que desea comprar: ")
     for juego in Wishlist:
-        if juego["juego"] == nombre_juego_por_comprar:
+        if juego["juego"].upper() == nombre_juego_por_comprar.upper():
             confirmación = input(f"{juego["juego"]} cuesta {juego["precio"]} ¿Desea confirmar la compra? (si/no): ")
             while True:
                 if confirmación.lower()== "si":
@@ -79,7 +81,7 @@ def comprar_juego(Wishlist):
                 else:
                     confirmación = input("Opción invalida. Ingrese si o no: ")
     print("Su juego no ha sido encontrado en su Wishlist.")
-
+# Codigo de funcion para mostrar la lista de juegos deseados
 def mostrar_wishlist(Wishlist):
     if len(Wishlist) == 0:
         print("No tiene juegos en su Wishlist.")
@@ -87,7 +89,7 @@ def mostrar_wishlist(Wishlist):
         print("Wishlist:")
         for juego in Wishlist:
             print(f"- {juego}")
-
+# Codigo de funcion para mostrar la lista de juegos comprados
 def mostrar_compras(Compras):
     if len(Compras) == 0:
         print("No ha comprado juegos.")
