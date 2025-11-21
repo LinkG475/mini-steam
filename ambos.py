@@ -1,6 +1,7 @@
-# Ambos
-Catalogo_Juegos = {}
+# Funciones compartidas
+Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
+# Codigo de funcion para buscar un juego
 def buscar_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego a buscar: ")
     for juego in Catalogo_Juegos.values():
@@ -21,7 +22,7 @@ def filtrar_juegos(Catalogo_Juegos):
             print(juego)
     else:
         print("No se encontraron juegos en esa categoría.")
-
+# Codigo de funcion para mostrar el catalogo de juegos completo
 def mostrar_catalogo(Catalogo_Juegos):
     if len(Catalogo_Juegos) == 0:
         print("No hay juegos disponibles.")

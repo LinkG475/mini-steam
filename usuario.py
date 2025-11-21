@@ -1,9 +1,9 @@
-# Usuarios
+# Funciones del Usuario
 from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
-Catalogo_Juegos = {}
-Wishlist = []
-categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
-Compras = []
+Catalogo_Juegos = {} # Diccionario de almacenaje de datos de los juegos
+Wishlist = [] # Lista de juegos deseados por el usuario
+categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"] 
+Compras = [] # Lista de juegos comprados por el usuario
 
 def menu_usuario(Catalogo_Juegos):
     while True:
@@ -22,7 +22,7 @@ def menu_usuario(Catalogo_Juegos):
         if opcion == "1":
             pedir_juego(Catalogo_Juegos)
         elif opcion == "2":
-            comprar_juego(Catalogo_Juegos)
+            comprar_juego(Wishlist)
         elif opcion == "3":
             mostrar_wishlist(Wishlist)
         elif opcion == "4":
@@ -62,7 +62,7 @@ def pedir_juego(Catalogo_Juegos):
                         return
     print("El juego no está disponible en el catálogo.")
 
-def comprar_juego(Wishlist, Compras):
+def comprar_juego(Wishlist):
     nombre_juego_por_comprar = input("Ingrese el nombre del juego que desea comprar: ")
     for juego in Wishlist:
         if juego["juego"] == nombre_juego_por_comprar:

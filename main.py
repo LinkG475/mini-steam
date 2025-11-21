@@ -1,16 +1,16 @@
 # Main
-from administrador import menu_administrador, agregar_juego, editar_juego, eliminar_juego
-from usuarios import menu_usuario, pedir_juego, comprar_juego
+from administrador import menu_administrador, agregar_juego, editar_juego, eliminar_juego, generador_id
+from usuario import menu_usuario, pedir_juego, comprar_juego
 from ambos import buscar_juego, filtrar_juegos, mostrar_catalogo
-
-Catalogo_Juegos = {}
+# Diccionario de almacenaje de datos de los juegos
+Catalogo_Juegos = {} 
 # Datos de administrador
 contrasenia = "admin123"
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
 # Datos de usuario
 Wishlist = []
 Compras = []
-# Menú de ejecución principal
+# Menú de ejecución inicial/principal
 def ejecucion(Catalogo_Juegos):
     while True:
         print("\n--- MENÚ INICIAL ---")
