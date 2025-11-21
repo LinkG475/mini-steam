@@ -3,6 +3,7 @@ from ambos import mostrar_catalogo, filtrar_juegos, buscar_juego
 Catalogo_Juegos = {}
 Wishlist = []
 categorias = ["Acción", "Aventura", "Deportes", "Estrategia", "Simulación"]
+Compras = []
 
 def pedir_juego(Catalogo_Juegos):
     nombre_juego = input("Ingrese el nombre del juego que desea: ")
@@ -15,25 +16,31 @@ def pedir_juego(Catalogo_Juegos):
             return
     print("El juego no está disponible en el catálogo.")
 
-def comprar_juego(lista_juegos):
+def comprar_juego(Wishlist, Compras):
     nombre_juego_por_comprar = input("Ingrese el nombre del juego que desea comprar: ")
-    for juego in lista_juegos:
-        if juego["nombre"] == nombre_juego_por_comprar.lower():
-            print(f"Juego encontrado: {juego}")
-        confirmación = input("¿Desea confirmar la compra? (si/no): ")
-        if confirmación.lower()== "si":
-            print(f"Usted ha comprado el juego: {juego['nombre']}")
-        else:
-            print("Compra cancelada.")
-            return
-print("Su juego no ha sido encontrado en el catálogo.")
+    for juego in Wishlist:
+        if juego["juego"] == nombre_juego_por_comprar:
+            #print(f"Juego encontrado: {juego}")
+            confirmación = input(f"{juego["juego"]} cuesta {juego["precio"]} ¿Desea confirmar la compra? (si/no): ")
+            while True:
+                if confirmación.lower()== "si":
+                    print(f"Usted ha comprado: {juego['nombre']}")
+                    Compras.append(juego)
+                    Wishlist.remove(juego)
+                    return
+                elif confirmación.lower() == "no":
+                    print("Compra cancelada.")
+                    return
+                else:
+                    confirmación = input("Opción invalida. Ingrese si o no: ")
+    print("Su juego no ha sido encontrado en su Wishlist.")
 
 def calificar_juego():
     print()
 
 def menu_usuario(Catalogo_Juegos):
     while True:
-        print("\n--- MENÚ DE ADMINISTRADOR ---")
+        print("\n--- MENÚ DE USUARIO ---")
         print("1. Pedir un juego")
         print("2. Comprar juego")
         print("3. Calificar juego")
@@ -49,6 +56,14 @@ def menu_usuario(Catalogo_Juegos):
         elif opcion == "2":
             comprar_juego(Catalogo_Juegos)
         elif opcion == "3":
+            calificar_juego(Catalogo_Juegos)
+        elif opcion == "4":
+            buscar_juego(Catalogo_Juegos)
+        elif opcion == "5":
+            filtrar_juegos(Catalogo_Juegos)
+        elif opcion == "6":
+            mostrar_catalogo(Catalogo_Juegos)
+        elif opcion == "7":
             print("Saliendo del programa...")
             break
         else:
