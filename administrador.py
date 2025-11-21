@@ -11,8 +11,7 @@ def menu_administrador(Catalogo_Juegos):
         print("3. Eliminar juego")
         print("4. Buscar juego")
         print("5. Mostrar catalogo de juegos")
-        print("6. ")
-        print("7. Salir")
+        print("6. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -26,9 +25,7 @@ def menu_administrador(Catalogo_Juegos):
             buscar_juego(Catalogo_Juegos)
         elif opcion == "5":
             mostrar_catalogo(Catalogo_Juegos)
-        #elif opcion == "6":
-            
-        elif opcion == "7":
+        elif opcion == "6":
             print("Regresando a menu inicial...")
             return
         else:
@@ -64,8 +61,6 @@ def agregar_juego(Catalogo_Juegos):
             print("El valor no puede ser procesado. Ingrese unicamente numeros.")
         else:
             break
-                
-
     juego = {
         codigo_juego: {
             "nombre": nombre_juego,
@@ -93,7 +88,7 @@ def editar_juego(Catalogo_Juegos):
                     try:
                         juego["precio"] = float(input("Ingrese el precio del juego: "))
                     except ValueError:
-                        print("El valor no puede ser procesado. Ingrese números.")
+                        print("El valor no puede ser procesado. Ingrese unicamente numeros.")
                     else:
                         break
                 print("Juego editado exitosamente.")
