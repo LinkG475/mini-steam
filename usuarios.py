@@ -20,11 +20,10 @@ def comprar_juego(Wishlist, Compras):
     nombre_juego_por_comprar = input("Ingrese el nombre del juego que desea comprar: ")
     for juego in Wishlist:
         if juego["juego"] == nombre_juego_por_comprar:
-            #print(f"Juego encontrado: {juego}")
             confirmación = input(f"{juego["juego"]} cuesta {juego["precio"]} ¿Desea confirmar la compra? (si/no): ")
             while True:
                 if confirmación.lower()== "si":
-                    print(f"Usted ha comprado: {juego['nombre']}")
+                    print(f"Usted ha comprado: {juego["juego"]}")
                     Compras.append(juego)
                     Wishlist.remove(juego)
                     return

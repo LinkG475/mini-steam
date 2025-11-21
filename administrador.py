@@ -48,13 +48,11 @@ def agregar_juego(Catalogo_Juegos):
     codigo_juego = generador_id(Catalogo_Juegos)
     nombre_juego = input("Ingrese el nombre del juego: ")
     categoria_juego = input("Ingrese la categoria del juego: ")
-    plataforma = input("Ingrese la plataforma del juego: ")
     precio_juego = float(input("Ingrese el precio del juego: "))
     #calificacion_juego = ("Ingrese la calificación del juego(1-10): ")
     juego = {codigo_juego:
         {"nombre": nombre_juego,
         "categoria": categoria_juego,
-        "plataforma" : plataforma,
         "precio": precio_juego}}
 #       "calificacion": calificacion_juego}    })
     Catalogo_Juegos.update(juego)
@@ -74,7 +72,6 @@ def editar_juego(Catalogo_Juegos):
                     print("Juego encontrado. Ingrese los nuevos datos.")
                     juego["nombre"] = input("Ingrese el nuevo nombre del juego: ")
                     juego["categoria"] = input("Ingrese el nuevo género del juego: ")
-                    juego["plataforma"] = input("Ingrese la nueva plataforma del juego: ")
                     juego["precio"] = float(input("Ingrese el nuevo precio del juego: "))         
                     print("Juego editado exitosamente.")
         if verificacion == 0:
@@ -92,4 +89,3 @@ def eliminar_juego(Catalogo_Juegos):
 
 
 menu_administrador()
-#print(Catalogo_Juegos)

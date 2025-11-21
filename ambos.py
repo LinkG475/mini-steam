@@ -26,5 +26,5 @@ def mostrar_catalogo(Catalogo_Juegos):
         print("No hay juegos disponibles.")
     else:
         print("Catálogo de Juegos:")
-        for juego in Catalogo_Juegos:
+        for juego in Catalogo_Juegos.values():
             print(juego)
