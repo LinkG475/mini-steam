@@ -21,8 +21,8 @@ def ejecucion(Catalogo_Juegos):
         opcion = input("Seleccione una opción: ")
 #Opciones de menu inicial
         if opcion == "1":
-            menu_usuario(Catalogo_Juegos)
             print("Entraste como usuario")
+            menu_usuario(Catalogo_Juegos)
         elif opcion == "2":
             contra = input("Ingrese la contraseña de administrador: ")
             if contra == contrasenia:
